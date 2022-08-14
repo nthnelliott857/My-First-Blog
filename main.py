@@ -26,10 +26,9 @@ gravatar = Gravatar(app,
                     force_lower=False,
                     use_ssl=False,
                     base_url=None)
-app.config['SECRET_KEY'] = os.environ["secret_key"]
+app.config['SECRET_KEY'] = os.environ.get("secret_key")
 ckeditor = CKEditor(app)
 Bootstrap(app)
-
 
 ##CONNECT TO DB
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///blog.db'
